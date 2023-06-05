@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 import static base_urls.MedunnaBaseUrl.spec;
 import static io.restassured.RestAssured.given;
 
-public class ApiRoomStepDefinitions {
+public class ApiRoomStepDefs {
 
     @Given("send get request to url")
     public void send_get_request_to_url() {

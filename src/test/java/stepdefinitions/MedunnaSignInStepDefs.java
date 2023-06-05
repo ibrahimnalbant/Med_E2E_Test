@@ -7,7 +7,7 @@ import pages.MedunnaLoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class MedunnaSignInStepDefinitions {
+public class MedunnaSignInStepDefs {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaLoginPage medunnaLoginPage = new MedunnaLoginPage();
 
@@ -32,16 +32,16 @@ public class MedunnaSignInStepDefinitions {
     }
 
 
-    @When("send username into username input")
-    public void send_username_into_username_input() {
+    @When("enter username")
+    public void enter_username() {
 
         medunnaLoginPage.usernameInput.sendKeys(ConfigReader.getProperty("medunna_username"));
 
     }
 
 
-    @When("send password into password input")
-    public void send_password_into_password_input() {
+    @When("enter password")
+    public void enter_password() {
 
         medunnaLoginPage.passwordInput.sendKeys(ConfigReader.getProperty("medunna_password"));
 

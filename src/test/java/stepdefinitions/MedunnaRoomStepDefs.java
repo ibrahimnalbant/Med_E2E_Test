@@ -2,12 +2,14 @@ package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.MedunnaHomePage;
 import pages.MedunnaRoomPage;
 import utilities.Driver;
 
-public class MedunnaRoomStepDefinitions {
+public class MedunnaRoomStepDefs {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
 
@@ -39,10 +41,18 @@ public class MedunnaRoomStepDefinitions {
 
     }
 
+//    @When("enter {string} room number input")
+//    public void enter_room_number_input(String roomNumber) {
+//        int roomNumberFaker = Faker.instance().number().numberBetween(100000,1000000);
+//
+//        medunnaRoomPage.roomNumberInput.sendKeys(roomNumberFaker+"");
+//
+//    }
+
     @When("select Suite option from Room Type dropdown")
     public void select_suite_option_from_room_type_dropdown() {
 
-        new Select(medunnaRoomPage.roomTypeDropDown).selectByIndex(2);
+        new Select(medunnaRoomPage.roomTypeDropDown).selectByIndex(3);
 
     }
 
@@ -69,9 +79,12 @@ public class MedunnaRoomStepDefinitions {
 
 
     @When("click on Save button")
-    public void click_on_save_button() {
+    public void click_on_save_button() throws InterruptedException {
 
-        medunnaRoomPage.saveSubmitButton.click();
+        new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN);
+        Thread.sleep(3000);
+
+        medunnaRoomPage.saveSubmitButton.submit();
 
     }
 
