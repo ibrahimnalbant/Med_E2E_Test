@@ -79,10 +79,9 @@ public class MedunnaRoomStepDefs {
 
 
     @When("click on Save button")
-    public void click_on_save_button() throws InterruptedException {
+    public void click_on_save_button() {
 
         new Actions(Driver.getDriver()).sendKeys(Keys.PAGE_DOWN);
-        Thread.sleep(3000);
 
         medunnaRoomPage.saveSubmitButton.submit();
 
