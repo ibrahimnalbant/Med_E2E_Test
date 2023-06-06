@@ -3,5 +3,5 @@ Feature: Get and Validate Room
 
   Scenario: Get Request and Assert
 
-    Given send get request
-    When validate body
+    Given send get request by id
+    When validate response body
